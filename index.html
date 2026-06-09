@@ -97,19 +97,56 @@ header{
     border-radius:15px;
     border: 1px solid #333;
     transition:0.3s;
+    display: flex; / برای وسط چین کردن /
+    flex-direction: column; / برای چیدمان عمودی /
+    justify-content: center; / وسط چین عمودی /
+    align-items: center; / وسط چین افقی /
+    min-height: 160px; / حداقل ارتفاع برای یکسان بودن /
 }
 
 .card:hover{ border-color:#00ffd5; box-shadow:0 0 15px #00ffd544; }
 
 .card h3{ font-size:18px; margin-bottom:10px; }
-.price{ color:#00ffd5; font-weight:bold; font-size:18px; }
+.price{ color:#00ffd5; font-weight:bold; font-size:18px; margin-bottom: auto; / این باعث میشه قیمت بالاتر بمونه / }
 
-/ MODES */
+/ Buy Button /
+.buy-btn {
+    display: block;
+    margin-top: 10px; / فاصله کمتر /
+    padding: 8px 15px; / فضای داخلی کمتر /
+    background: transparent;
+    color: #00ffd5;
+    border: 1px solid #00ffd5;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px; / فونت کوچکتر /
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.buy-btn:hover {
+    background: #00ffd5;
+    color: black;
+    box-shadow: 0 0 10px #00ffd5;
+}
+
+
+/ MODES /
 .mode{
     background:#151515;
     padding:15px;
     border-radius:12px;
     border-bottom: 2px solid #00ffd5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+.mode span { / استایل برای کلمه آفلاین /
+    color:#777;
+    font-size:12px;
+    margin-top: 5px; / فاصله از متن اصلی */
 }
 
 footer{ padding:30px; text-align:center; color:#555; font-size:12px; }
@@ -136,27 +173,68 @@ footer{ padding:30px; text-align:center; color:#555; font-size:12px; }
 <section class="section">
     <h2>رنک‌های سرور</h2>
     <div class="grid">
-        <div class="card"><h3>VIP</h3><div class="price">40T</div></div>
-        <div class="card"><h3>MVP</h3><div class="price">65T</div></div>
-        <div class="card"><h3>Knight</h3><div class="price">110T</div></div>
-        <div class="card"><h3>King</h3><div class="price">120T</div></div>
-        <div class="card"><h3>Supreme</h3><div class="price">140T</div></div>
-        <div class="card"><h3>Leon</h3><div class="price">155T</div></div>
-        <div class="card"><h3>Leon-Star</h3><div class="price">199T</div></div>
+        <!-- رنک VIP -->
+        <div class="card">
+            <h3>VIP</h3>
+            <div class="price">40T</div>
+            <a href="لینک_پرداخت_برای_VIP
+
+" class="buy-btn">خرید رنک</a>
+        </div>
+
+        <!-- رنک MVP -->
+        <div class="card">
+            <h3>MVP</h3>
+            <div class="price">65T</div>
+            <a href="لینک_پرداخت_برای_MVP" class="buy-btn">خرید رنک</a>
+        </div>
+
+        <!-- رنک Knight -->
+        <div class="card">
+            <h3>Knight</h3>
+            <div class="price">110T</div>
+            <a href="لینک_پرداخت_برای_Knight" class="buy-btn">خرید رنک</a>
+        </div>
+
+        <!-- رنک King -->
+        <div class="card">
+            <h3>King</h3>
+            <div class="price">120T</div>
+            <a href="لینک_پرداخت_برای_King" class="buy-btn">خرید رنک</a>
+        </div>
+
+        <!-- رنک Supreme -->
+        <div class="card">
+            <h3>Supreme</h3>
+            <div class="price">140T</div>
+            <a href="لینک_پرداخت_برای_Supreme" class="buy-btn">خرید رنک</a>
+        </div>
+
+        <!-- رنک Leon -->
+        <div class="card">
+            <h3>Leon</h3>
+            <div class="price">155T</div>
+            <a href="لینک_پرداخت_برای_Leon" class="buy-btn">خرید رنک</a>
+        </div>
+
+        <!-- رنک Leon-Star -->
+        <div class="card">
+            <h3>Leon-Star</h3>
+            <div class="price">199T</div>
+            <a href="لینک_پرداخت_برای_Leon-Star" class="buy-btn">خرید رنک</a>
+        </div>
     </div>
 </section>
 
 <section class="section">
     <h2>گیم مودها</h2>
     <div class="grid">
-        <div class="mode">Skymine <br><span style="color:#777;font-size:12px;">(آفلاین)</span></div>
-        <div class="mode">Survival <br><span style="color:#777;font-size:12px;">(آفلاین)</span></div>
-        <div class="mode">Bedwars <br><span style="color:#777;font-size:12px;">(آفلاین)</span></div>
-        <div class="mode">Practice <br><span style="color:#777;font-size:12px;">(آفلاین)</span></div>
-        <div class="mode">Skywars <br><span style="color:#777;font-size:12px;">(آفلاین)</span></div>
-        <div class="mode"
-
->Parkour <br><span style="color:#777;font-size:12px;">(آفلاین)</span></div>
+        <div class="mode">Skymine <br><span>(آفلاین)</span></div>
+        <div class="mode">Survival <br><span>(آفلاین)</span></div>
+        <div class="mode">Bedwars <br><span>(آفلاین)</span></div>
+        <div class="mode">Practice <br><span>(آفلاین)</span></div>
+        <div class="mode">Skywars <br><span>(آفلاین)</span></div>
+        <div class="mode">Parkour <br><span>(آفلاین)</span></div>
     </div>
 </section>
 
