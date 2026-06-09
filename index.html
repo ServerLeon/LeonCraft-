@@ -4,216 +4,172 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LeonCraft | سرور ماینکرفت</title>
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;700&display=swap');
 
-{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Vazirmatn',sans-serif;
-}
+{ margin:0; padding:0; box-sizing:border-box; font-family:'Vazirmatn',sans-serif; }
 
 body{
-background:linear-gradient(180deg,#0a0a0a,#000);
-color:white;
-direction:rtl;
+    background:#0a0a0a;
+    color:white;
+    direction:rtl;
+    overflow-x: hidden;
 }
 
-/ header /
-
 header{
-text-align:center;
-padding:80px 20px;
+    text-align:center;
+    padding:60px 15px;
 }
 
 .logo{
-font-size:60px;
-color:#00ffd5;
-text-shadow:
-0 0 10px #00ffd5,
-0 0 25px #00ffd5,
-0 0 60px #00ffd5;
+    font-size:50px;
+    color:#00ffd5;
+    text-shadow: 0 0 15px #00ffd5, 0 0 30px #00ffd5;
+    margin-bottom: 10px;
 }
 
 .subtitle{
-margin-top:10px;
-color:#bbb;
-font-size:20px;
+    color:#ccc;
+    font-size:18px;
+    margin-bottom: 25px;
 }
 
-/ buttons /
+/ IP BOX /
+.ip-box{
+    background:rgba(255,255,255,0.05);
+    padding:15px;
+    border-radius:15px;
+    border:1px solid #00ffd555;
+    display:inline-block;
+    margin-bottom: 20px;
+}
+.ip-text{ font-size:18px; color:#00ffd5; margin-bottom:10px; font-weight:bold;}
 
-.buttons{
-margin-top:25px;
+/ BUTTONS /
+.btn-container{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .btn{
-display:inline-block;
-margin:8px;
-padding:12px 25px;
-border-radius:12px;
-text-decoration:none;
-color:white;
-font-size:16px;
-transition:0.3s;
-cursor:pointer;
+    padding:10px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    transition:0.3s;
+    cursor:pointer;
+    border:none;
+    flex: 1 1 120px; / این باعث میشه در موبایل کنار هم باشن تا جا بشن /
 }
 
-.discord{
-background:#5865F2;
-box-shadow:0 0 15px #5865F2;
-}
+.copybtn{ background:#00ffd5; color:black; font-weight:bold; }
+.discord{ background:#5865F2; }
+.rubika{ background:#ff1744; }
 
-.rubika{
-background:#ff1744;
-box-shadow:0 0 15px #ff1744;
-}
+.btn:hover{ transform:translateY(-3px); filter:brightness(1.2); }
 
-.copybtn{
-background:#00ffd5;
-color:black;
-box-shadow:0 0 15px #00ffd5;
-}
-
-.btn:hover{
-transform:scale(1.1);
-}
-
-/ IP section /
-
-.ip-box{
-margin-top:25px;
-background:#111;
-display:inline-block;
-padding:15px 25px;
-border-radius:15px;
-box-shadow:0 0 15px rgba(0,255,200,0.4);
-}
-
-.ip-text{
-font-size:18px;
-color:#00ffd5;
-}
-
-/ sections /
-
-.section{
-padding:50px 20px;
-text-align:center;
-}
-
+/ SECTIONS /
+.section{ padding:40px 15px; text-align:center; }
 .section h2{
-font-size:32px;
-margin-bottom:30px;
-color:#00ffd5;
-text-shadow:0 0 10px #00ffd5;
+    font-size:28px;
+    margin-bottom:25px;
+    color:#00ffd5;
+    text-shadow:0 0 10px #00ffd5;
 }
 
-/ cards /
-
+/ CARDS /
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-max-width:1000px;
-margin:auto;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap:15px;
+    max-width:900px;
+    margin:auto;
 }
 
 .card{
-background:#111;
-padding:25px;
-border-radius:15px;
-box-shadow:0 0 15px rgba(0,255,200,0.3);
-transition:0.3s;
+    background:#151515;
+    padding:20px 10px;
+    border-radius:15px;
+    border: 1px solid #333;
+    transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 0 25px rgba(0,255,200,0.8);
-}
+.card:hover{ border-color:#00ffd5; box-shadow:0 0 15px #00ffd544; }
 
-.price{
-margin-top:10px;
-font-size:20px;
-color:#00ffd5;
-}
+.card h3{ font-size:18px; margin-bottom:10px; }
+.price{ color:#00ffd5; font-weight:bold; font-size:18px; }
 
+/ MODES */
 .mode{
-background:#111;
-padding:18px;
-border-radius:12px;
-box-shadow:0 0 10px rgba(0,255,200,0.3);
+    background:#151515;
+    padding:15px;
+    border-radius:12px;
+    border-bottom: 2px solid #00ffd5;
 }
 
-/ footer */
+footer{ padding:30px; text-align:center; color:#555; font-size:12px; }
 
-footer{
-margin-top:40px;
-text-align:center;
-padding:20px;
-color:#777;
-font-size:14px;
-}
 </style>
 </head>
-
 <body>
 
 <header>
+    <h1 class="logo">LeonCraft</h1>
+    <p class="subtitle">به سرور ما خوش آمدید</p>
 
-<h1 class="logo">LeonCraft</h1>
-<p class="subtitle">به سرور ما خوش آمدید</p>
+    <div class="ip-box">
+        <div class="ip-text">Play.LeonCraft.ir</div>
+        <button class="btn copybtn" onclick="copyIP()">کپی آیپی</button>
+    </div>
 
-<div class="ip-box">
-<div class="ip-text">IP: Play.LeonCraft.ir</div>
-<button class="btn copybtn" onclick="copyIP()">کپی آیپی</button>
-</div>
-
-<div class="buttons">
-<a class="btn discord" href="#">دیسکورد ما</a>
-<a class="btn rubika" href="#">روبیکای ما</a>
-</div>
-
+    <div class="btn-container">
+        <a class="btn discord" href="#">دیسکورد</a>
+        <a class="btn rubika" href="#">روبیکا</a>
+    </div>
 </header>
 
 <section class="section">
-<h2>رنک‌های سرور</h2>
-<div class="grid">
-<div class="card"><h3>VIP</h3><div class="price">40T</div></div>
-<div class="card"><h3>MVP</h3><div class="price">65T</div></div>
-<div class="card"><h3>Knight</h3><div class="price">110T</div></div>
-<div class="card"><h3>King</h3><div class="price">120T</div></div>
-<div class="card"><h3>Supreme</h3><div class="price">140T</div></div>
-<div class="card"><h3>Leon</h3><div class="price">155T</div></div>
-<div class="card"><h3>Leon-Star</h3><div class="price">199T</div></div>
-</div>
+    <h2>رنک‌های سرور</h2>
+    <div class="grid">
+        <div class="card"><h3>VIP</h3><div class="price">40T</div></div>
+        <div class="card"><h3>MVP</h3><div class="price">65T</div></div>
+        <div class="card"><h3>Knight</h3><div class="price">110T</div></div>
+        <div class="card"><h3>King</h3><div class="price">120T</div></div>
+        <div class="card"><h3>Supreme</h3><div class="price">140T</div></div>
+        <div class="card"><h3>Leon</h3><div class="price">155T</div></div>
+        <div class="card"><h3>Leon-Star</h3><div class="price">199T</div></div>
+    </div>
 </section>
 
 <section class="section">
-<h2>گیم مودها</h2>
-<div class="grid">
-<div class="mode">Skymine <span style="color:#aaa;font-size:14px;">(آفلاین)</span></div>
-<div class="mode">Survival <span style="color:#aaa;font-size:14px;">(آفلاین)</span></div>
-<div class="mode">Bedwars <span style="color:#aaa;font-size:14px;">(آفلاین)</span></div>
-<div class="mode">Practice <span style="color:#aaa;font-size:14px;">(آفلاین)</span></div>
-<div class="mode">Skywars <span style="color:#aaa;font-size:14px;">(آفلاین)</span></div>
-<div class="mode">Parkour <span style="color:#aaa;font-size:14px;">(آفلاین)</span></div>
-</div>
+    <h2>گیم مودها</h2>
+    <div class="grid">
+        <div class="mode">Skymine <br><span style="color:#777;font-size:12px;">(آفلاین)</span></div>
+        <div class="mode">Survival <br><span style="color:#777;font-size:12px;">(آفلاین)</span></div>
+        <div class="mode">Bedwars <br><span style="color:#777;font-size:12px;">(آفلاین)</span></div>
+        <div class="mode">Practice <br><span style="color:#777;font-size:12px;">(آفلاین)</span></div>
+        <div class="mode">Skywars <br><span style="color:#777;font-size:12px;">(آفلاین)</span></div>
+        <div class="mode"
+
+>Parkour <br><span style="color:#777;font-size:12px;">(آفلاین)</span></div>
+    </div>
 </section>
 
 <footer>
-©️ 2026 LeonCraft Minecraft Server
+    ©️ 2026 LeonCraft Minecraft Server
 </footer>
 
 <script>
 function copyIP() {
-navigator.clipboard.writeText("Play.LeonCraft.ir");
-alert("آیپی سرور کپی شد ✅");
+    navigator.clipboard.writeText("Play.LeonCraft.ir");
+    alert("آیپی سرور کپی شد ✅");
 }
 </script>
 
 </body>
 </html>
-
